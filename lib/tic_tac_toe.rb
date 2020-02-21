@@ -38,13 +38,7 @@ def turn(board)
 end
 
 # Define your play method below
-def play(board)
-  turn_count = 0
-  while turn_count < 9
-    turn(board)
-    turn_count+=1
-  end
-end
+
 
 def turn_count(board)
   turns = 0
@@ -104,7 +98,14 @@ def play(board)
     endgame = true
     getinput = ""
     while endgame
-    play(board)
+      puts "Please enter a position"
+      getinput = gets.strip
+      if position_taken?(board, input_to_index(getinput))
+        puts "Position is taken bruh"
+      else
+        move(board, input_to_index(getinput), current_player(board))
+      end
+      display_board(board)
       if over?(board)
         endgame = false
         if draw?(board)
