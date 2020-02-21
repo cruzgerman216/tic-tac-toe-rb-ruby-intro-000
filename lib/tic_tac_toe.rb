@@ -93,27 +93,5 @@ def winner(board)
 end
 
 def play(board)
-  display_board(board)
-  puts "X goes first"
-    endgame = true
-    getinput = ""
-    while endgame
-      puts "Please enter a position"
-      getinput = gets.strip
-      if position_taken?(board, input_to_index(getinput))
-        puts "Position is taken bruh"
-      else
-        move(board, input_to_index(getinput), current_player(board))
-      end
-      display_board(board)
-      if over?(board)
-        endgame = false
-        if draw?(board)
-          puts "It was a draw!"
-        elsif won?(board)
-          puts "winner winner chicken dinner!"
-          puts "player #{winner(board)} wins!"
-        end
-      end
-    end
+
 end
