@@ -103,7 +103,7 @@ def play(board)
       if position_taken?(board, input_to_index(getinput))
         puts "Position is taken bruh"
       else
-        move(board, input_to_index(getinput), current_player(board))
+        move(board, input_to_index(getinput))
       end
       display_board(board)
       if over?(board)
